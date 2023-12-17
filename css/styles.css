@@ -42,6 +42,18 @@ background-color: #FFFFFF;
     letter-spacing: 0.02em;
     color: #434455;
 }
+.socials{
+    display: flex;
+    justify-content: center;
+        align-items: center;
+        gap: 24px;
+        margin-top: 8px;
+}
+
+.socials-icon{
+    fill: #F4F4FD;
+    display: flex;
+}
 
 /* Reset styles */
 
@@ -105,14 +117,28 @@ a.company-name{
     padding-top: 24px;
     padding-bottom: 24px;
     display: block;
+    position: relative;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .navigation .nav-items:hover,
 .navigation .nav-items:focus {
 color: #404BBF;
+
 }
 .navigation .nav-items:active {
    color: #404BBF;
 }
+.nav-items.active::after {
+    content:"";
+    position: absolute;
+    bottom: -1px;
+        display: block;
+        width: 100%;
+        height: 4px;
+border-radius: 2px;
+    background: var(--OCEAN, #404BBF);
+}
+
 .address {
     font-size: 16px;
     font-weight: 400;
@@ -127,6 +153,7 @@ color: #404BBF;
 }
 .address .address-item{
 color: #434455;
+transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
  }
 .address .address-item:hover,
 .address .address-item:focus {
@@ -167,18 +194,24 @@ color: #434455;
             min-width: 169px;
             height: 56px;
             border: none;
+            transition: background 250ms cubic-bezier(0.4, 0, 0.2, 1);
     
 } 
 .button:hover,
 .button:focus {
-    background: var(--OCEAN, #404BBF);
+    background: var(--OCEAN, #404BBF) ;
 }
 .hero {
-        
+    
     background-color: #2E2F42;
     padding-top: 188px;
     padding-bottom: 188px;
-        
+    background-image: linear-gradient(rgba(46, 47, 66, 0.7),rgba(46, 47, 66, 0.7)),
+    url(../images/people-office.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
 }
 
 /* Advantages section */
@@ -204,6 +237,23 @@ color: #434455;
 .advantages-header-item{
     width: 264px;
     margin-bottom: 8px;
+}
+.rectangle{ 
+    border-radius: 4px;
+        border: 1px solid var(--LIGHT-SLATE, #8E8F99);
+        background: var(--CLOUD, #F4F4FD);
+        position: relative:
+        width: 264px;
+        height: 112px;
+        flex-shrink: 0;
+        display: flex;
+    align-items: center;
+    justify-content:center;
+    margin-bottom: 8px;
+}
+.advantages-list-item-wrapper {
+      position:absolute;
+
 }
 /* Team section */
 
@@ -232,9 +282,29 @@ color: #434455;
     text-align: center;
 }
 
+.socials-item {
+    display: flex;
+    width: 40px;
+    height: 40px;
+    background-color: #4D5AE5;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+}
+
+.socials-item:hover,
+.address-item:focus {
+    background-color: #404BBF;
+
+}
 /* Portfolio section */
 
+.portfolio-item:hover {
+     box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08), 0px 1px 1px 0px rgba(46, 47, 66, 0.16), 0px 1px 6px 0px rgba(46, 47, 66, 0.08);
 
+}
 .portfolio-list{
     display: flex;
     flex-wrap: wrap;
@@ -250,7 +320,34 @@ color: #434455;
 
     width: 360px;
     width: calc((100% - 48px) / 3);
+    overflow: hidden;
+  
 }
+.portfolio-img {
+    position: relative;
+    overflow: hidden;
+}
+.overlay {
+    color: var(--CLOUD, #F4F4FD);
+        font-family: Roboto;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+        letter-spacing: 0.02em;
+        padding: 40px 32px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--IRIS, #4D5AE5);
+    transform: translateY(100%);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.portfolio-item:hover .overlay {
+transform: translateY(0);
+}
+
 .portfolio-header-item{
     margin-top: 32px;
         margin-bottom: 8px;
@@ -273,6 +370,7 @@ color: #434455;
         letter-spacing: 0.02em;
         padding-top: 100px;
         padding-bottom: 100px;
+        position: relative;
 }
 .company-name-part-light{
     color: var(--CLOUD, #F4F4FD);
@@ -286,4 +384,33 @@ margin-bottom: 16px;
         font-size: 16px;
         font-weight: 400;
         width: 264px;
+}
+.media-footer{
+        font-weight: 500;
+        line-height: 24px;
+        letter-spacing: 0.02em;
+        position:absolute;
+        top: 100px;
+        left: 540px;
+}
+.socials-item-footer{
+   display: flex;
+    width: 40px;
+    height: 40px;
+    background-color: #4D5AE5;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+}
+.socials-item-footer:hover {
+    background-color: #31D0AA;
+}
+.socials-footer{
+    display:flex;
+    gap:16px;
+    position: absolute;
+        top: 140px;
+        left: 540px;
 }
