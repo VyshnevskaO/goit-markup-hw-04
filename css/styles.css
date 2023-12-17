@@ -53,6 +53,27 @@ background-color: #FFFFFF;
 .socials-icon{
     fill: #F4F4FD;
     display: flex;
+
+}
+.socials-link{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #4D5AE5;
+    display: flex;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    width: 40px;
+    height: 40px;
+}
+.socials-link:hover,
+.address-link:focus {
+    background-color: #404BBF;
+
 }
 
 /* Reset styles */
@@ -75,6 +96,7 @@ img {
  /* Header section */
 .header{
   border-bottom: 1px solid #e7e9fc;
+box-shadow: 0px 1px 6px 0px rgba(46, 47, 66, 0.08), 0px 1px 1px 0px rgba(46, 47, 66, 0.16), 0px 2px 1px 0px rgba(46, 47, 66, 0.08);
 }
 .header-container{
     display: flex;
@@ -125,7 +147,7 @@ a.company-name{
 color: #404BBF;
 
 }
-.navigation .nav-items:active {
+.nav-items.active {
    color: #404BBF;
 }
 .nav-items.active::after {
@@ -194,7 +216,8 @@ transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
             min-width: 169px;
             height: 56px;
             border: none;
-            transition: background 250ms cubic-bezier(0.4, 0, 0.2, 1);
+            transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+            
     
 } 
 .button:hover,
@@ -211,6 +234,7 @@ transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    max-width: 1440px;
 
 }
 
@@ -282,25 +306,9 @@ transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     text-align: center;
 }
 
-.socials-item {
-    display: flex;
-    width: 40px;
-    height: 40px;
-    background-color: #4D5AE5;
-    border-radius: 50%;
-    justify-content: center;
-    align-items: center;
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
-}
-
-.socials-item:hover,
-.address-item:focus {
-    background-color: #404BBF;
-
-}
 /* Portfolio section */
-
+ 
 .portfolio-item:hover {
      box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08), 0px 1px 1px 0px rgba(46, 47, 66, 0.16), 0px 1px 6px 0px rgba(46, 47, 66, 0.08);
 
@@ -317,7 +325,7 @@ transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
         letter-spacing: 0.02em;
 }
 .portfolio-item{
-
+transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
     width: 360px;
     width: calc((100% - 48px) / 3);
     overflow: hidden;
@@ -327,7 +335,8 @@ transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
 }
-.overlay {
+
+.overlay-text{
     color: var(--CLOUD, #F4F4FD);
         font-family: Roboto;
         font-size: 16px;
@@ -335,16 +344,16 @@ transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
         line-height: 24px;
         letter-spacing: 0.02em;
         padding: 40px 32px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: var(--IRIS, #4D5AE5);
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: var(--IRIS, #4D5AE5);
+        width: 100%;
+       height: 100%;
     transform: translateY(100%);
-    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+        transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.portfolio-item:hover .overlay {
+.portfolio-item:hover .overlay-text {
 transform: translateY(0);
 }
 
@@ -372,26 +381,41 @@ transform: translateY(0);
         padding-bottom: 100px;
         position: relative;
 }
+.container-footer {
+    max-width: 1158px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    align-items: baseline;
+}
+.first-section-footer{
+    margin-right: 120px;
+}
 .company-name-part-light{
     color: var(--CLOUD, #F4F4FD);
 
 }
 .company-name{
-display: inline-block;
-margin-bottom: 16px;
+display: block;
 }
 .todo{
         font-size: 16px;
         font-weight: 400;
         width: 264px;
+        margin-top: 16px;
 }
 .media-footer{
         font-weight: 500;
-        line-height: 24px;
+        font-size: 16px;
         letter-spacing: 0.02em;
         position:absolute;
         top: 100px;
         left: 540px;
+        color: #FFFFFF;
+        line-height: 1.5;
+        margin-bottom: 16px;
 }
 .socials-item-footer{
    display: flex;
